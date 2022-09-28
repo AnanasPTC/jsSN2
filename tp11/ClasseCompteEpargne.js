@@ -21,7 +21,7 @@ class CompteEpargne
         {
             textb="compte non bloqué"
         }
-        para.innerHTML=
+        para.innerHTML="Compte épargne numéro "+this.NC+"a "+ this.TauxInteret+"de taux d'intérêts,de solde de "+this.solde+" euros, "+this.blocage;
     }
 
     crediter()
