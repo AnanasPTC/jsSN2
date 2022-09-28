@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UFT-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TP10</title>
+        <script src="tp10exo1.js"></script>
+        <script src="tp10exo2.js"></script>
+    </head>
+    <body>
+        <div id="gdiv"></div>
+        <script>
+            function main()
+                {
+                    e = new Etudiant("Dupont", "Jacques", 0);
+                    console.log(e.getNom+ " " + e.getNumero);
+                    e.changerPrenom="Jules";
+                    e.changerNom="Durand";
+                    e.changerNumero=12;
+                    console.log(e.getNom+ " " + e.getNumero);
+                }
+                main()
+            
+        </script>
+        <input type="button" value="bouddha" onclick="bouddha()"><br>
+    </body>
+</html>  
