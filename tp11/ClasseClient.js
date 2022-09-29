@@ -1,11 +1,7 @@
-function testClient()
+function ApplicationBancaire()
 {
-    hestia=new Client("theo",123456,654321,1000,2,false,2000);
-    hestia.consulterComptes();
-    hestia.crediter(100,true);
-    hestia.consulterComptes();
-    hestia.debiter(200,true);
-    hestia.consulterComptes();
+    Dupont=new Client(Dupont,123456,654321,400,2.5,false,3500);
+    
 }
 
 class Client extends CompteEpargne
