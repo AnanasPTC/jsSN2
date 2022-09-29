@@ -8,17 +8,18 @@ function testCompteEpargne()
     midas.infos();
 }
 
-class CompteEpargne
+class CompteEpargne extends CompteCourant
 {
-    constructor(NC,solde,TauxInteret,blocage)
+    constructor(NCE,soldeCE,TauxInteret,blocage,NCC,soldeCC)
     {
-       this.NC=NC;
-       this.solde=solde;
-       this.TauxInteret=TauxInteret;
-       this.blocage=blocage; 
+        super(NCC,soldeCC)
+        this.NCE=NCE;
+        this.soldeCE=soldeCE;
+        this.TauxInteret=TauxInteret;
+        this.blocage=blocage; 
     }
 
-    infos()
+    infosCE()
     {
         let textb;
         let para = document.createElement('p');
@@ -31,31 +32,31 @@ class CompteEpargne
         {
             textb="compte non bloqué"
         }
-        para.innerHTML="Compte épargne numéro "+this.NC+" a "+ this.TauxInteret+"% de taux d'intérêts,de solde de "+this.solde+" euros, "+this.blocage;
+        para.innerHTML="Compte épargne numéro "+this.NCE+" a "+ this.TauxInteret+"% de taux d'intérêts,de solde de "+this.soldeCE+" euros, "+this.blocage;
     }
 
-    crediter(montant)
+    crediterCE(montant)
     {
         let para = document.createElement('p');
         document.getElementById("thanatos").append(para);
-        this.solde=this.solde+montant;
+        this.soldeCE=this.soldeCE+montant;
         para.innerHTML="operation effectuer"
     }
 
-    debiter(montant)
+    debiterCE(montant)
     {
         let para = document.createElement('p');
         document.getElementById("thanatos").append(para);
-        if(this.solde>0)
+        if(this.soldeCE>0)
         {
-            if(montant>this.solde)
+            if(montant>this.soldeCE)
             {
                 this.solde=0;
                 para.innerHTML = "solde insufisant l'argent restant sur le compte a été débiter ";
             }
             else
             {
-                this.solde=this.solde-montant;
+                this.soldeCE=this.soldeCE-montant;
                 para.innerHTML = "operation effectuer";
             }
         }
@@ -65,13 +66,13 @@ class CompteEpargne
         }
     }
 
-    ajouterInterets(montantinteret)
+    ajouterInteretsCE(montantinteret)
     {
         this.TauxInteret=this.TauxInteret+montantinteret;
     }
 
-    getSolde()
+    getSoldeCE()
     {
-        return this.solde;
+        return this.soldeCE;
     }
 }

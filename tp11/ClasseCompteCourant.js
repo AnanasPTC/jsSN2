@@ -1,47 +1,47 @@
 function testCompteCourant()
 {
     odin= new CompteCourant(123456,100);
-    odin.infos();
+    odin.infosCC();
     odin.crediter(400);
     odin.infos();
     odin.debiter(500);
-    odin.infos();
+    odin.infosCC();
 }
 
 class CompteCourant
 {
-    constructor(NC,solde)
+    constructor(NC,soldeCC)
     {
         this.NC=NC;
-        this.solde=solde;
+        this.soldeCC=soldeCC;
     }
-    infos()
+    infosCC()
     {
         let para = document.createElement('p');
         document.getElementById("ares").append(para);
-        para.innerHTML = "compte courant numéro:"+this.NC+",solde="+this.solde+" euro";
+        para.innerHTML = "compte courant numéro:"+this.NC+",solde="+this.soldeCC+" euro";
     }
-    crediter(montant)
+    crediterCC(montant)
     {
-        this.solde=this.solde+montant;
+        this.soldeCC=this.soldeCC+montant;
         let para = document.createElement('p');
         document.getElementById("ares").append(para);
         para.innerHTML = "operation effectuer";
     }
-    debiter(montant)
+    debiterCC(montant)
     {
         let para = document.createElement('p');
         document.getElementById("ares").append(para);
-        if(this.solde>0)
+        if(this.soldeCC>0)
         {
             if(montant>this.solde)
             {
-                this.solde=0;
+                this.soldeCC=0;
                 para.innerHTML = "solde insufisant l'argent restant sur le compte a été débiter ";
             }
             else
             {
-                this.solde=this.solde-montant;
+                this.soldeCC=this.soldeCC-montant;
                 para.innerHTML = "operation effectuer";
             }
         }
