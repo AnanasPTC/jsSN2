@@ -1,13 +1,3 @@
-function testCompteEpargne()
-{
-    midas=new CompteEpargne(123456,1000,2,false);
-    midas.infos();
-    midas.crediter(100);
-    midas.infos();
-    midas.debiter(300);
-    midas.infos();
-}
-
 class CompteEpargne extends CompteCourant
 {
     constructor(NCE,soldeCE,TauxInteret,blocage,NCC,soldeCC)
@@ -23,7 +13,7 @@ class CompteEpargne extends CompteCourant
     {
         let textb;
         let para = document.createElement('p');
-        document.getElementById("thanatos").append(para);
+        document.getElementById("zeus").append(para);
         if (this.blocage==true)
         {
             textb="compte bloqué"
@@ -38,7 +28,7 @@ class CompteEpargne extends CompteCourant
     crediterCE(montant)
     {
         let para = document.createElement('p');
-        document.getElementById("thanatos").append(para);
+        document.getElementById("zeus").append(para);
         this.soldeCE=this.soldeCE+montant;
         para.innerHTML="operation effectuer"
     }
@@ -46,7 +36,7 @@ class CompteEpargne extends CompteCourant
     debiterCE(montant)
     {
         let para = document.createElement('p');
-        document.getElementById("thanatos").append(para);
+        document.getElementById("zeus").append(para);
         if(this.soldeCE>0)
         {
             if(montant>this.soldeCE)

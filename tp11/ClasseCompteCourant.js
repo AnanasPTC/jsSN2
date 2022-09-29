@@ -1,13 +1,3 @@
-function testCompteCourant()
-{
-    odin= new CompteCourant(123456,100);
-    odin.infosCC();
-    odin.crediter(400);
-    odin.infos();
-    odin.debiter(500);
-    odin.infosCC();
-}
-
 class CompteCourant
 {
     constructor(NC,soldeCC)
@@ -18,20 +8,20 @@ class CompteCourant
     infosCC()
     {
         let para = document.createElement('p');
-        document.getElementById("ares").append(para);
+        document.getElementById("zeus").append(para);
         para.innerHTML = "compte courant numéro:"+this.NC+",solde="+this.soldeCC+" euro";
     }
     crediterCC(montant)
     {
         this.soldeCC=this.soldeCC+montant;
         let para = document.createElement('p');
-        document.getElementById("ares").append(para);
+        document.getElementById("zeus").append(para);
         para.innerHTML = "operation effectuer";
     }
     debiterCC(montant)
     {
         let para = document.createElement('p');
-        document.getElementById("ares").append(para);
+        document.getElementById("zeus").append(para);
         if(this.soldeCC>0)
         {
             if(montant>this.solde)
