@@ -24,7 +24,7 @@ class CompteCourant
         document.getElementById("zeus").append(para);
         if(this.soldeCC>0)
         {
-            if(montant>this.solde)
+            if(montant>this.soldeCC)
             {
                 this.soldeCC=0;
                 para.innerHTML = "solde insufisant l'argent restant sur le compte a été débiter ";

@@ -58,7 +58,7 @@ class CompteEpargne extends CompteCourant
 
     ajouterInteretsCE(montantinteret)
     {
-        this.TauxInteret=this.TauxInteret+montantinteret;
+        this.soldeCC=this.TauxInteret+montantinteret;
     }
 
     getSoldeCE()

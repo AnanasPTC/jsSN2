@@ -1,19 +1,10 @@
-function ApplicationBancaire()
+
+function test()
 {
-    //Dupont
-    Dupont=new Client("Dupont",123456,654321,400,2.5,false,3500);
-    Dupont.consulterComptes();
-    Dupont.crediter(200,true);
-    Dupont.debiter(50,false);
-    //Dupont.calculInterets();
-    Dupont.consulterComptes();
-    //Martin
-    Martin=new Client("Martin",987654,456789,1000,3.5,true,200);
-    Martin.consulterComptes();
-    Martin.debiter(500,true);
-    Martin.debiter(500,false);
-    //Martin.calculInterets();
-    Martin.consulterComptes();
+    let ACC = document.getElementById("ACC");
+    let hermes=Number(ACC.value);
+    hermes=hermes+5;
+    ACC.value=hermes;
 }
 
 class Client extends CompteEpargne
@@ -26,8 +17,12 @@ class Client extends CompteEpargne
 
     consulterComptes()
     {
-        super.infosCE();
-        super.infosCC();
+        let affichage = document.getElementById("ACC");
+        affichage.value=this.soldeCC;
+        affichage = document.getElementById("ACE");
+        affichage.value=this.soldeCE;
+        //super.infosCE();
+        //super.infosCC();
     }
 
     getNom()
@@ -49,6 +44,8 @@ class Client extends CompteEpargne
             super.crediterCE(montant);
             para.innerHTML="opération effectuer sur le compte Epargne "
         }
+        this.consulterComptes();
+
     }
 
     debiter(montant,compte)
@@ -65,10 +62,11 @@ class Client extends CompteEpargne
             super.debiterCE(montant);
             para.innerHTML="opération effectuer sur le compte Epargne "
         }
+        this.consulterComptes();
     }
 
     calculInterets()
     {
-
+        
     }
 }
