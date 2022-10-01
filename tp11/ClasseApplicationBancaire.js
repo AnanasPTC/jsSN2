@@ -5,6 +5,11 @@ class ApplicationBancaire extends Client
         super("theo",123456,987654,500,2,false,1000);
     }
 
+    test()
+    {
+        super.consulterComptes()
+    }
+
     crediter(compte)
     {
         if(compte==true)

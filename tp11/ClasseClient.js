@@ -9,9 +9,9 @@ function test()
 
 class Client extends CompteEpargne
 {
-    constructor(nom,NCC,NCE,soldeCE,tauxCE,blocageCE,soldeCC)
+    constructor(nom,NCC,NCE,soldeCE,TauxInteret,blocageCE,soldeCC)
     {
-        super(NCC,soldeCE,tauxCE,blocageCE,NCC,soldeCC);
+        super(NCC,soldeCE,TauxInteret,blocageCE,NCC,soldeCC);
         this.nom=nom;
     }
 
@@ -21,6 +21,8 @@ class Client extends CompteEpargne
         affichage.value=this.soldeCC;
         affichage = document.getElementById("ACE");
         affichage.value=this.soldeCE;
+        affichage = document.getElementById("taux");
+        affichage.innerHTML=this.TauxInteret+"%";
         //super.infosCE();
         //super.infosCC();
     }

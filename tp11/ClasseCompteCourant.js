@@ -1,15 +1,15 @@
 class CompteCourant
 {
-    constructor(NC,soldeCC)
+    constructor(NCC,soldeCC)
     {
-        this.NC=NC;
+        this.NCC=NCC;
         this.soldeCC=soldeCC;
     }
     infosCC()
     {
         let para = document.createElement('p');
         document.getElementById("zeus").append(para);
-        para.innerHTML = "compte courant numéro:"+this.NC+",solde="+this.soldeCC+" euro";
+        para.innerHTML = "compte courant numéro:"+this.NCC+",solde="+this.soldeCC+" euro";
     }
     crediterCC(montant)
     {
