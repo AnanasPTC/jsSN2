@@ -10,6 +10,28 @@
         <script src="ClasseApplicationBancaire.js"></script>
     </head>
     <body>
+        <script>
+            hestia=new ApplicationBancaire();
+        </script>
+        <h1>TP11</h1>
+        <input type="button" onclick="hestia.test()" value="test">
+        <div>
+            <p>compte courant</p>
+            <input type="text" readonly name="ACC" id="ACC" value="0">€
+            <input type="button" onclick="hestia.crediter(true)" value="crediter">
+            <input type="button" onclick="hestia.debiter(true)" value="debiter">
+            <input type="number" value="0" id="NCC" name="NCC">€
+            
+        </div>
+        <div>
+            <p>compte epargne</p>
+            <input type="text" readonly name="ACE" id="ACE" value="0">€
+            <p id="taux"></p>
+            <input type="button" onclick="hestia.crediter(false)" value="crediter">
+            <input type="button" onclick="hestia.debiter(false)" value="debiter">
+            <input type="number" value="0" id="NCE" name="NCE">€
+        </div>
+        <div id="zeus"></div>
         
     </body>
 </html>  
